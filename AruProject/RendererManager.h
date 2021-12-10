@@ -1,14 +1,17 @@
 #ifndef _RENDERERMANAGER_H_
-#define _RENDERERMANAGER_H_
+#define _RENDERERMANAGER_H_ 
 #include "IRenderer.h"
+#include "AruEngineSetting.h"
 
 class Vector3;
+class Camera;
 
 class RendererManager
 {
 private:
-	RendererManager() {};
-	~RendererManager() {};
+	RendererManager() :p_Renderer(nullptr), p_Camera(nullptr) {}
+	~RendererManager() {}
+
 public:
 	static RendererManager* Instance()
 	{
@@ -17,16 +20,18 @@ public:
 	}
 
 private:
-	IRenderer* renderer;
+	IRenderer* p_Renderer;
+	Camera* p_Camera;
 
 public:
 	void SetRenderer(IRenderer* _renderer);	
 	IRenderer* GetRenderer();
 
-	void RendererMgrInit(int argc, char** argv);
-	void RendererMgrRenderReset();
+	bool RendererMgrInit(int argc, char** argv, AruEngineSetting _setting);
 	void RendererMgrLoopEvent();
-	unsigned int RendererMgrGetMyTextureObject(int _index);
+
+	void SetCamera(Camera* _camera);
+	Vector3 GetCameraPos();
 };
 
 #endif 

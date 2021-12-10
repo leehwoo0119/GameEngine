@@ -4,31 +4,63 @@
 
 Transform::Transform()
 {
-	m_position.x = 0.0;
-	m_position.y = 0.0;
-	m_position.z = 0.0;
-	m_scale.x = 1.0;
-	m_scale.y = 1.0;
-	m_scale.z = 1.0;
+	position.x = 0.0;
+	position.y = 0.0;
+	position.z = 0.0;
+	scale.x = 1.0;
+	scale.y = 1.0;
+	scale.z = 1.0;
 }
 
 Transform::~Transform()
 {
 }
 
-void Transform::Translate(GameObject* _gameobject, Vector3 _vector)
+void Transform::AddChild(Transform* _child)
 {
-	_gameobject->SetPostion(_vector);
+	m_Childs.emplace_back(_child);
+	_child->p_Parent = this;
+	_child->SetPostion(_child->position + position);
+	_child->childFirstPosition = _child->position + position;
+	_child->SetScale(_child->scale * scale);
 }
 
-void Transform::Start(GameObject* _gameobject)
+void Transform::SetPostion(Vector3 _vec)
 {
-	std::cout << "ÁÂÇ¥ : (" << m_position.x << " , " << m_position.y << " , " << m_position.z << ")" << std::endl;
-	std::cout << "       Å©±â : (" << m_scale.x << " , " << m_scale.y << " , " << m_scale.z << ")" << std::endl << std::endl;
+	position = _vec;
 }
 
-void Transform::FixedUpdate(GameObject* _gameobject)
+void Transform::SetScale(Vector3 _vec)
 {
-	std::cout << "ÁÂÇ¥ : (" << m_position.x << " , " << m_position.y << " , " << m_position.z << ")" << std::endl;
-	std::cout << "       Å©±â : (" << m_scale.x << " , " << m_scale.y << " , " << m_scale.z << ")" << std::endl << std::endl;
+	scale = _vec;
+	if (!m_Childs.empty())
+	{
+		for (auto childs : m_Childs)
+		{
+			childs->scale *= scale;
+		}
+	}
+}
+void Transform::Translate(Vector3 _vector)
+{
+	if (!m_Childs.empty())
+	{
+		for (auto childs : m_Childs)
+		{
+			childs->SetPostion(childs->childFirstPosition + position + _vector);
+		}
+	}
+	SetPostion(position + _vector);
+}
+
+void Transform::Start()
+{
+	//std::cout << "ÁÂÇ¥ : (" << m_position.x << " , " << m_position.y << " , " << m_position.z << ")" << std::endl;
+	//std::cout << "       Å©±â : (" << m_scale.x << " , " << m_scale.y << " , " << m_scale.z << ")" << std::endl << std::endl;
+}
+
+void Transform::FixedUpdate()
+{
+	//std::cout << "ÁÂÇ¥ : (" << m_position.x << " , " << m_position.y << " , " << m_position.z << ")" << std::endl;
+	//std::cout << "       Å©±â : (" << m_scale.x << " , " << m_scale.y << " , " << m_scale.z << ")" << std::endl << std::endl;
 }

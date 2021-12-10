@@ -1,27 +1,37 @@
 #ifndef _TIME_H_
 #define _TIME_H_
+#define DELTA_TIME Time::Instance()->GetDeltaTime()
 #include <windows.h>
 
 class Time
 {
-public:
+private:
 	Time();
 	~Time() {};
 
 public:
-	static Time& getInstance()
+	static Time* Instance()
 	{
 		static Time instance;
-		return instance;
+		return &instance;
 	}
 
-public:
-	LARGE_INTEGER FrameInfo, CurFrame, PrevFrame;
-	int FixedUpdateCnt, deltaTimeCnt;
-	double Frame;
+private:
+	LARGE_INTEGER frameInfo, updateCurFrame, updatePrevFrame;
+	//fixed
+	double fixedFrame;
+	double fixedTime;
+	//render
+	double renderFrame;
+	double renderTime;
+	//delta
+	double deltaTime;
 
-public:
-	void StartTimer();
+public:	
+	void UpdateTimer();													
+	bool FixedUpdateTimer();
+	bool RenderUpdateTimer();
+	double GetDeltaTime();
 };
 
 #endif 

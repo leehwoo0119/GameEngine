@@ -79,7 +79,9 @@
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -90,12 +92,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\LHW\source\repos\AruProject\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\LHW\Desktop\AruProject\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\LHW\source\repos\AruProject\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\LHW\Desktop\AruProject\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>freeglut.lib;glaux.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -120,11 +122,14 @@
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\LHW\Desktop\AruProject;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\LHW\Desktop\AruProject\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freeglut.lib;glaux.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -144,44 +149,57 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AruEngineSetting.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CircleRenderer.cpp" />
     <ClCompile Include="Component.cpp" />
+    <ClCompile Include="CustomScene.cpp" />
+    <ClCompile Include="ExecuteCoroutine.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MonoBehaviour.cpp" />
+    <ClCompile Include="MyCameraCtrl.cpp" />
     <ClCompile Include="MyComponent.cpp" />
-    <ClCompile Include="Object.cpp" />
     <ClCompile Include="OpenGLRenderer.cpp" />
     <ClCompile Include="Render2DTexture.cpp" />
     <ClCompile Include="RendererManager.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SkyScroll.cpp" />
     <ClCompile Include="SquareRenderer.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="TriangleRenderer.cpp" />
     <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="WaitForSecondsTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AruEngineSetting.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="CircleRenderer.h" />
     <ClInclude Include="Component.h" />
+    <ClInclude Include="CustomScene.h" />
+    <ClInclude Include="ExecuteCoroutine.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Render2DPolygon.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="IRenderer.h" />
     <ClInclude Include="IStartUpdate.h" />
     <ClInclude Include="MonoBehaviour.h" />
+    <ClInclude Include="MyCameraCtrl.h" />
     <ClInclude Include="MyComponent.h" />
-    <ClInclude Include="Object.h" />
     <ClInclude Include="OpenGLRenderer.h" />
     <ClInclude Include="Render2DTexture.h" />
     <ClInclude Include="RendererManager.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SkyScroll.h" />
     <ClInclude Include="SquareRenderer.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="TriangleRenderer.h" />
     <ClInclude Include="Vector3.h" />
+    <ClInclude Include="WaitForSecondsTimer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

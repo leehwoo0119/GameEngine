@@ -1,6 +1,6 @@
 #ifndef _TRANSFORM_H_
 #define _TRANSFORM_H_
-#include "Vector3.h"
+#include <list>
 #include "Component.h"
 
 class GameObject;
@@ -12,14 +12,23 @@ public:
 	virtual ~Transform();
 
 public:
-	Vector3 m_position;
-	Vector3 m_scale;
+	std::list<Transform*> m_Childs;
+
+	Transform* p_Parent;
+
+	Vector3 position;
+	Vector3 childFirstPosition;
+	Vector3 scale;
 
 public:
-	void Translate(GameObject* _gameobject, Vector3 _vector);
+	void AddChild(Transform* _child);
 
-	void Start(GameObject* _gameobject)override;
-	void FixedUpdate(GameObject* _gameobject)override;
+	void SetPostion(Vector3 _vec);
+	void SetScale(Vector3 _vec);
+	void Translate(Vector3 _vector);
+
+	void Start()override;
+	void FixedUpdate()override;
 };
 
 #endif 

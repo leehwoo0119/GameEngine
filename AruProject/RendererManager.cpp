@@ -1,39 +1,47 @@
 #include "RendererManager.h"
 #include "Vector3.h"
+#include "Camera.h"
+#include <assert.h>
 
 void RendererManager::SetRenderer(IRenderer* _renderer)
 {
-	renderer = _renderer;
+	p_Renderer = _renderer;
 }
 
 IRenderer* RendererManager::GetRenderer()
 {
-	return renderer;
+	assert(p_Renderer != NULL);
+	return p_Renderer;
 }
 
-void RendererManager::RendererMgrInit(int argc, char** argv)
+bool RendererManager::RendererMgrInit(int argc, char** argv, AruEngineSetting _setting)
 {
-	if(renderer)
-		renderer->Init(argc, argv);
-}
-
-void RendererManager::RendererMgrRenderReset()
-{
-	if (renderer)
-		renderer->RenderReset();
+	assert(p_Renderer != NULL);
+	return (p_Renderer->Init(argc, argv, _setting.GetWindowWidth(),
+		_setting.GetWindowHeight(),
+		_setting.GetTitle()));
 }
 
 void RendererManager::RendererMgrLoopEvent()
 {
-	if (renderer)
-		renderer->LoopEvent();
+	assert(p_Renderer != NULL);
+	p_Renderer->RenderReset();
+	p_Renderer->LoopEvent();
 }
 
-unsigned int RendererManager::RendererMgrGetMyTextureObject(int _index)
+void RendererManager::SetCamera(Camera* _camera)
 {
-	if (renderer)
-		return renderer->GetMyTextureObject(_index);
-	else
-		return false;
+	assert(p_Renderer != NULL);
+	p_Camera = _camera;
+	if (!p_Camera)
+		p_Renderer->SetCamera(p_Camera);
 }
+
+Vector3 RendererManager::GetCameraPos()
+{
+	if(p_Camera)
+		return p_Camera->GetCameraPosition();
+	return Vector3(0, 0, 0);
+}
+
 

@@ -1,18 +1,15 @@
 #ifndef _SQARERENDERER_H_
 #define _SQARERENDERER_H_
-#include "Render2DPolygon.h"
+#include "Component.h"
 
-class SquareRenderer : public Render2DPolygon
+class SquareRenderer : public Component
 {
 public:
-	SquareRenderer();
-	virtual ~SquareRenderer();
+	SquareRenderer() {}
+	virtual ~SquareRenderer() {}
 
-public:
-	void RenderPolygon(Vector3 _pos, Vector3 _scale)override;
-	
-	void Start(GameObject* _gameobject)override;
-	void FixedUpdate(GameObject* _gameobject)override;
+public:	
+	void Render()override;
 };
 
 #endif 

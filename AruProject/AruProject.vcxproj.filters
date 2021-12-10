@@ -1,156 +1,220 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
+    <Filter Include="EngineSource">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일\2DRenderComp">
-      <UniqueIdentifier>{2ae9bf11-3ab0-4b3d-a8c9-fb1d521d32a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\MonoBehaviour">
+    <Filter Include="EngineSource\MonoBehaviour">
       <UniqueIdentifier>{3bd1f2a6-0d38-41ea-9dec-4c2d7b8d81aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\MyComponentScript">
-      <UniqueIdentifier>{f58663cb-7382-48f8-b6f5-bd5e00390049}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\GameObject">
+    <Filter Include="EngineSource\GameObject">
       <UniqueIdentifier>{becfefd4-cc30-4f6b-a7d9-31d60fa1a5ae}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Time">
+    <Filter Include="EngineSource\Time">
       <UniqueIdentifier>{c21da71d-e607-4447-a778-577211b4908a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Transform">
-      <UniqueIdentifier>{1ef33cfa-f433-4160-8361-9bbcaadee18a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\RendererTools">
+    <Filter Include="EngineSource\RendererTools">
       <UniqueIdentifier>{78bb84a7-a8c2-45f6-84b7-9ffb3a584055}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Render2DComp">
+    <Filter Include="EngineSource\Component">
+      <UniqueIdentifier>{ad3e3a2b-f23e-43b1-b76d-4a659a0885a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineSource\Component\Render2DComp">
       <UniqueIdentifier>{04cd91af-5eaa-4088-ab39-d1e272894db7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\RenderTextureComp">
+    <Filter Include="EngineSource\Component\RenderTextureComp">
       <UniqueIdentifier>{346213d0-6aea-4394-b8ee-d5677e707a96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineSource\Component\Transform">
+      <UniqueIdentifier>{1ef33cfa-f433-4160-8361-9bbcaadee18a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineSource\Component\Camera">
+      <UniqueIdentifier>{2af325e6-d375-42c5-9f6b-f0c2cd669f8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineSource\EngineSetting">
+      <UniqueIdentifier>{5d11e517-5327-4568-9da6-e12b5d35c5a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineSource\Manager">
+      <UniqueIdentifier>{8ae07b4d-9db1-4967-bdf6-6aab4049a3a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineSource\Manager\InputManager">
+      <UniqueIdentifier>{ceb8fa8f-8569-43e2-b633-d86a8cd16f96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineSource\Manager\SceneManager">
+      <UniqueIdentifier>{6086a07c-5e4f-4d1a-bd9a-aad390ce9f35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineSource\Manager\RendererManager">
+      <UniqueIdentifier>{4a4a9346-1a88-4892-8c69-e40108831845}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineSource\Scene">
+      <UniqueIdentifier>{9210e5c9-1964-4224-9db5-77eaa10576d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EngineSource\Coroutine">
+      <UniqueIdentifier>{404efbc6-443f-4d55-aa99-609547f87eab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSource">
+      <UniqueIdentifier>{bc9832ab-b553-4bb5-9757-3ffd6f158c45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{3bf67c1d-d1cd-4bdc-a921-815b1c032c36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSource\UserCustomScene">
+      <UniqueIdentifier>{b90fe524-dfcb-405b-847f-cc5f7d4c7723}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSource\UserCustomComponent">
+      <UniqueIdentifier>{5cf4c80e-2d0a-45e7-b320-7472ef2e5bd9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="SquareRenderer.cpp">
-      <Filter>소스 파일\Render2DComp</Filter>
+      <Filter>EngineSource\Component\Render2DComp</Filter>
     </ClCompile>
     <ClCompile Include="TriangleRenderer.cpp">
-      <Filter>소스 파일\Render2DComp</Filter>
+      <Filter>EngineSource\Component\Render2DComp</Filter>
     </ClCompile>
     <ClCompile Include="CircleRenderer.cpp">
-      <Filter>소스 파일\Render2DComp</Filter>
-    </ClCompile>
-    <ClCompile Include="Component.cpp">
-      <Filter>소스 파일\MonoBehaviour</Filter>
+      <Filter>EngineSource\Component\Render2DComp</Filter>
     </ClCompile>
     <ClCompile Include="MonoBehaviour.cpp">
-      <Filter>소스 파일\MonoBehaviour</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>소스 파일\MonoBehaviour</Filter>
-    </ClCompile>
-    <ClCompile Include="MyComponent.cpp">
-      <Filter>소스 파일\MyComponentScript</Filter>
+      <Filter>EngineSource\MonoBehaviour</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
-      <Filter>소스 파일\GameObject</Filter>
+      <Filter>EngineSource\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="Time.cpp">
-      <Filter>소스 파일\Time</Filter>
+      <Filter>EngineSource\Time</Filter>
     </ClCompile>
     <ClCompile Include="Transform.cpp">
-      <Filter>소스 파일\Transform</Filter>
+      <Filter>EngineSource\Component\Transform</Filter>
     </ClCompile>
     <ClCompile Include="Vector3.cpp">
-      <Filter>소스 파일\Transform</Filter>
+      <Filter>EngineSource\Component\Transform</Filter>
     </ClCompile>
     <ClCompile Include="OpenGLRenderer.cpp">
-      <Filter>소스 파일\RendererTools</Filter>
-    </ClCompile>
-    <ClCompile Include="RendererManager.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>EngineSource\RendererTools</Filter>
     </ClCompile>
     <ClCompile Include="Render2DTexture.cpp">
-      <Filter>소스 파일\RenderTextureComp</Filter>
+      <Filter>EngineSource\Component\RenderTextureComp</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomScene.cpp">
+      <Filter>GameSource\UserCustomScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>EngineSource\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="MyComponent.cpp">
+      <Filter>GameSource\UserCustomComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="AruEngineSetting.cpp">
+      <Filter>EngineSource\EngineSetting</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>EngineSource\Component\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>EngineSource\Manager\InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="RendererManager.cpp">
+      <Filter>EngineSource\Manager\RendererManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>EngineSource\Manager\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>EngineSource\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MyCameraCtrl.cpp">
+      <Filter>GameSource\UserCustomComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitForSecondsTimer.cpp">
+      <Filter>EngineSource\Coroutine</Filter>
+    </ClCompile>
+    <ClCompile Include="ExecuteCoroutine.cpp">
+      <Filter>EngineSource\Coroutine</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>GameSource</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyScroll.cpp">
+      <Filter>GameSource\UserCustomComponent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Scene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="CircleRenderer.h">
-      <Filter>소스 파일\Render2DComp</Filter>
-    </ClInclude>
-    <ClInclude Include="Render2DPolygon.h">
-      <Filter>소스 파일\Render2DComp</Filter>
+      <Filter>EngineSource\Component\Render2DComp</Filter>
     </ClInclude>
     <ClInclude Include="SquareRenderer.h">
-      <Filter>소스 파일\Render2DComp</Filter>
+      <Filter>EngineSource\Component\Render2DComp</Filter>
     </ClInclude>
     <ClInclude Include="TriangleRenderer.h">
-      <Filter>소스 파일\Render2DComp</Filter>
-    </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>소스 파일\MonoBehaviour</Filter>
+      <Filter>EngineSource\Component\Render2DComp</Filter>
     </ClInclude>
     <ClInclude Include="MonoBehaviour.h">
-      <Filter>소스 파일\MonoBehaviour</Filter>
-    </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>소스 파일\MonoBehaviour</Filter>
+      <Filter>EngineSource\MonoBehaviour</Filter>
     </ClInclude>
     <ClInclude Include="IStartUpdate.h">
-      <Filter>소스 파일\MonoBehaviour</Filter>
-    </ClInclude>
-    <ClInclude Include="MyComponent.h">
-      <Filter>소스 파일\MyComponentScript</Filter>
+      <Filter>EngineSource\MonoBehaviour</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
-      <Filter>소스 파일\GameObject</Filter>
+      <Filter>EngineSource\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="Time.h">
-      <Filter>소스 파일\Time</Filter>
+      <Filter>EngineSource\Time</Filter>
     </ClInclude>
     <ClInclude Include="Transform.h">
-      <Filter>소스 파일\Transform</Filter>
+      <Filter>EngineSource\Component\Transform</Filter>
     </ClInclude>
     <ClInclude Include="Vector3.h">
-      <Filter>소스 파일\Transform</Filter>
+      <Filter>EngineSource\Component\Transform</Filter>
     </ClInclude>
     <ClInclude Include="IRenderer.h">
-      <Filter>소스 파일\RendererTools</Filter>
+      <Filter>EngineSource\RendererTools</Filter>
     </ClInclude>
     <ClInclude Include="OpenGLRenderer.h">
-      <Filter>소스 파일\RendererTools</Filter>
-    </ClInclude>
-    <ClInclude Include="RendererManager.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>EngineSource\RendererTools</Filter>
     </ClInclude>
     <ClInclude Include="Render2DTexture.h">
-      <Filter>소스 파일\RenderTextureComp</Filter>
+      <Filter>EngineSource\Component\RenderTextureComp</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomScene.h">
+      <Filter>GameSource\UserCustomScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>EngineSource\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="MyComponent.h">
+      <Filter>GameSource\UserCustomComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="AruEngineSetting.h">
+      <Filter>EngineSource\EngineSetting</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>EngineSource\Component\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>EngineSource\Manager\InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererManager.h">
+      <Filter>EngineSource\Manager\RendererManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>EngineSource\Manager\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>EngineSource\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MyCameraCtrl.h">
+      <Filter>GameSource\UserCustomComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitForSecondsTimer.h">
+      <Filter>EngineSource\Coroutine</Filter>
+    </ClInclude>
+    <ClInclude Include="ExecuteCoroutine.h">
+      <Filter>EngineSource\Coroutine</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyScroll.h">
+      <Filter>GameSource\UserCustomComponent</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,18 +1,15 @@
 #ifndef _TRIANGLERENDERER_H_
 #define _TRIANGLERENDERER_H_
-#include "Render2DPolygon.h"
+#include "Component.h"
 
-class TriangleRenderer : public Render2DPolygon
+class TriangleRenderer : public Component
 {
 public:
-	TriangleRenderer();
-	virtual ~TriangleRenderer();
+	TriangleRenderer() {}
+	virtual ~TriangleRenderer() {}
 
 public:
-	void RenderPolygon(Vector3 _pos, Vector3 _scale)override;
-
-	void Start(GameObject* _gameobject)override;
-	void FixedUpdate(GameObject* _gameobject)override;
+	void Render()override;
 };
 
 #endif 

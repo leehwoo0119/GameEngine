@@ -1,1 +1,2 @@
-C:\Users\LHW\source\repos\AruProject\Debug\AruProject.exe
+C:\Users\LHW\Desktop\AruProject\Debug\AruProject.exe
+C:\Users\LHW\Desktop\직박구리\AruProject\Debug\AruProject.exe

@@ -10,10 +10,6 @@ public:
 	
 public:
 	bool bEnable;
-
-public:
-	void Start(GameObject* _gameobject)override {}
-	void FixedUpdate(GameObject* _gameobject)override {}
 };
 
 #endif 

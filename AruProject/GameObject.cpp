@@ -3,27 +3,21 @@
 #include "Transform.h"
 #include "Vector3.h"
 
-#include <iostream>
-
-GameObject::GameObject() :gameObject(NULL)
+GameObject::GameObject(std::string _name):p_GameObject(NULL)
 {
-}
-
-GameObject::GameObject(std::string _name):gameObject(NULL)
-{
-	gameObject = this;
+	p_GameObject = this;
 	this->name = _name;
-	transform = new Transform();
-	AddComponent(transform);
+	AddComponent(new Transform());
+	p_Transform = GetComponent<Transform>();
 }
 
 GameObject::~GameObject()
 {
-	delete transform;
-	delete gameObject;
+	delete p_Transform;
+	delete p_GameObject;
 
-	for (std::list<Component*>::iterator iter = components.begin();
-		iter != components.end();
+	for (std::list<Component*>::iterator iter = m_Components.begin();
+		iter != m_Components.end();
 		iter++)
 	{
 		delete (*iter);
@@ -32,57 +26,70 @@ GameObject::~GameObject()
 
 void GameObject::AddComponent(Component* _comp)
 {
-	components.emplace_back(_comp);
+	m_Components.emplace_back(_comp);
+	_comp->p_GameObject = this;
 }
 
-void GameObject::AddChild(GameObject* _child)
+void GameObject::Awake()
 {
-	childs.emplace_back(_child);
-	_child->parent = this;
-}
-
-void GameObject::SetPostion(Vector3 _vec)
-{
-	if (!transform)return;
-
-	if (this->parent != nullptr)
+	for (std::list<Component*>::iterator comp = m_Components.begin();
+		comp != m_Components.end(); comp++)
 	{
-		_vec += this->parent->transform->m_position;
+		(*comp)->Awake();
 	}
-
-	transform->m_position = _vec;
-
-}
-
-void GameObject::SetScale(Vector3 _vec)
-{
-	if (!transform)return;
-
-	if (this->parent != nullptr)
-	{
-		_vec *= this->parent->transform->m_scale;
-	}
-
-	transform->m_scale = _vec;
 }
 
 void GameObject::Start()
 {
-	for (std::list<Component*>::iterator comp = components.begin();
-		comp != components.end(); comp++)
+	for (std::list<Component*>::iterator comp = m_Components.begin();
+		comp != m_Components.end(); comp++)
 	{
-		std::cout << name << "ÀÇ ";
-		(*comp)->Start(this);
+		(*comp)->Start();
 	}
 }
 
 void GameObject::FixedUpdate()
 {
-	for (std::list<Component*>::iterator comp = components.begin();
-		comp != components.end(); comp++)
+	for (std::list<Component*>::iterator comp = m_Components.begin();
+		comp != m_Components.end(); comp++)
 	{
-		std::cout << name << "ÀÇ ";
-		(*comp)->FixedUpdate(this);
+		(*comp)->FixedUpdate();
+	}
+}
+
+void GameObject::Update()
+{
+	for (std::list<Component*>::iterator comp = m_Components.begin();
+		comp != m_Components.end(); comp++)
+	{
+		(*comp)->Update();
+	}
+}
+
+void GameObject::Coroutine()
+{
+	for (std::list<Component*>::iterator comp = m_Components.begin();
+		comp != m_Components.end(); comp++)
+	{
+		(*comp)->Coroutine();
+	}
+}
+
+void GameObject::LateUpdate()
+{
+	for (std::list<Component*>::iterator comp = m_Components.begin();
+		comp != m_Components.end(); comp++)
+	{
+		(*comp)->LateUpdate();
+	}
+}
+
+void GameObject::Render()
+{
+	for (std::list<Component*>::iterator comp = m_Components.begin();
+		comp != m_Components.end(); comp++)
+	{
+		(*comp)->Render();
 	}
 }
 

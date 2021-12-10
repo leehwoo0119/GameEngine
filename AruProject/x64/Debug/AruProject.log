@@ -1,0 +1,14 @@
+﻿AruEngineSetting.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/INCREMENTAL:NO' 사양으로 인해 무시됩니다.
+OpenGLRenderer.obj : error LNK2019: __imp_glutInitWindowPosition"public: virtual bool __cdecl OpenGLRenderer::Init(int,char * *,int,int,char const *)" (?Init@OpenGLRenderer@@UEAA_NHPEAPEADHHPEBD@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+OpenGLRenderer.obj : error LNK2019: __imp_glutInitWindowSize"public: virtual bool __cdecl OpenGLRenderer::Init(int,char * *,int,int,char const *)" (?Init@OpenGLRenderer@@UEAA_NHPEAPEADHHPEBD@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+OpenGLRenderer.obj : error LNK2019: __imp_glutInitDisplayMode"public: virtual bool __cdecl OpenGLRenderer::Init(int,char * *,int,int,char const *)" (?Init@OpenGLRenderer@@UEAA_NHPEAPEADHHPEBD@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+OpenGLRenderer.obj : error LNK2019: __imp_glutPostRedisplay"private: static void __cdecl OpenGLRenderer::ResetDisplay(void)" (?ResetDisplay@OpenGLRenderer@@CAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+OpenGLRenderer.obj : error LNK2019: __imp_glutSwapBuffers"public: virtual bool __cdecl OpenGLRenderer::Init(int,char * *,int,int,char const *)" (?Init@OpenGLRenderer@@UEAA_NHPEAPEADHHPEBD@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+OpenGLRenderer.obj : error LNK2019: __imp_glutDisplayFunc"public: virtual void __cdecl OpenGLRenderer::RenderReset(void)" (?RenderReset@OpenGLRenderer@@UEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+OpenGLRenderer.obj : error LNK2019: __imp___glutInitWithExitglutInit_ATEXIT_HACK 함수에서 참조되는 확인할 수 없는 외부 기호
+OpenGLRenderer.obj : error LNK2019: __imp___glutCreateWindowWithExitglutCreateWindow_ATEXIT_HACK 함수에서 참조되는 확인할 수 없는 외부 기호
+OpenGLRenderer.obj : error LNK2019: auxDIBImageLoadA"private: struct _AUX_RGBImageRec * __cdecl OpenGLRenderer::LoadBMP(char *)" (?LoadBMP@OpenGLRenderer@@AEAAPEAU_AUX_RGBImageRec@@PEAD@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+OpenGLRenderer.obj : error LNK2019: __imp_glutMainLoopEvent"public: virtual void __cdecl OpenGLRenderer::LoopEvent(void)" (?LoopEvent@OpenGLRenderer@@UEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
+C:\Users\LHW\Desktop\AruProject\lib\freeglut.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
+C:\Users\LHW\Desktop\AruProject\lib\glaux.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
+C:\Users\LHW\Desktop\AruProject\x64\Debug\AruProject.exe : fatal error LNK1120: 10개의 확인할 수 없는 외부 참조입니다.

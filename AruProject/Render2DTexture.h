@@ -1,22 +1,18 @@
 #ifndef _RENDER2DTEXTURE_H_
 #define _RENDER2DTEXTURE_H_
-
-#include "Vector3.h"
 #include "Component.h"
 
 class Render2DTexture : public Component
 {
 public:
-	Render2DTexture(int _imagetype);
+	Render2DTexture(std::string _imageName) :imageName(_imageName) {}
 	virtual ~Render2DTexture(){}
+
 private:
-	int imageType;
+	std::string imageName;
 
 public:
-	void RenderTexture(Vector3 _pos, Vector3 _scale);
-
-	void Start(GameObject* _gameobject)override;
-	void FixedUpdate(GameObject* _gameobject)override;
+	void Render()override;
 };
 
 #endif 

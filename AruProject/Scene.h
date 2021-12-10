@@ -10,21 +10,26 @@ class Scene
 {
 public:
 	Scene();
-	Scene(std::string _scenename);
 	~Scene();
 
-private:
+public:
 	std::string sceneName;
-	Time* time;	
 
 public:
-	std::list<GameObject*> gameObjects;
+	std::list<GameObject*> m_GameObjects;
 
 public:
-	void AddGameObject(GameObject* _object);
+	virtual void Hierarchy() = 0;
 
+	GameObject* AddGameObject(GameObject* _object);
+
+	void SceneAwake();
 	void SceneStart();
-	void SceneLoop();
+	void SceneFixedUpdate();
+	void SceneUpdate();
+	void SceneCoroutine();
+	void SceneLateUpdate();
+	void SceneRender();
 };
 
 #endif 
